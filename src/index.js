@@ -1,12 +1,14 @@
-import 'babel-polyfill';
-import express from 'express';
-import graphql from 'express-graphql';
-import { text } from 'body-parser';
+import { GraphQLObjectType, GraphQLSchema } from 'graphql';
 
-import schema from './schema';
+import { health, userStream, whoami } from './queries';
 
-const app = express();
-app.use(text({ type: 'application/graphql' }));
-app.use('/ql', graphql({ schema, pretty: true }));
-
-app.listen(3000);
+export default new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'Query',
+    fields: {
+      health,
+      userStream,
+      whoami,
+    },
+  }),
+});
