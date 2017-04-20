@@ -16,6 +16,7 @@ export default {
         sbot.createUserStream({ id }),
         pull.collect((err, msgs) => {
           if (err) { reject(err); }
+          sbot.close();
           resolve(msgs);
         }),
       );
