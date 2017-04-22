@@ -1,7 +1,7 @@
 {
   "name": "ssb-graphql",
   "version": "0.0.0",
-  "description": "A GraphQL server for SecureScuttlebutt",
+  "description": "GraphQL schema for SecureScuttlebutt",
   "main": "dist/index.js",
   "private": true,
   "scripts": {
