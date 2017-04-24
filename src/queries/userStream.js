@@ -2,10 +2,10 @@ import pull from 'pull-stream';
 import ssbClient from 'ssb-party';
 import ref from 'ssb-ref';
 
-export default ({ id }) => new Promise((resolve, reject) => {
-  if (!ref.isFeedId(id)) { reject(new Error(`${id} is not a valid feed ID`)); }
+export default (_, { id }) => new Promise((resolve, reject) => {
   ssbClient((err, sbot) => {
     if (err) { reject(err); }
+    if (!ref.isFeedId(id)) { reject(new Error(`${id} is not a valid feed ID`)); }
     pull(
       sbot.createUserStream({ id }),
       pull.collect((err, msgs) => {

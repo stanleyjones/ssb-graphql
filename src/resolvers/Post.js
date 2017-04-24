@@ -1,6 +1,6 @@
-import { messageResolvers } from './Message';
+import DefaultMessage from './DefaultMessage';
 
 export default {
-  ...messageResolvers,
-  text(msg) { return msg.value.content.text || 'n/a'; },
+  ...DefaultMessage,
+  text: (msg) => msg.value.content.text,
 }
