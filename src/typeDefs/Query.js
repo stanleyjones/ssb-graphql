@@ -1,6 +1,7 @@
 export default `
   type Query {
-    userStream(id: String): [Message]
+    history (id: String! sequence: Int): [Message]
+    profile (id: String!): User
     whoami: String
   }
 `

@@ -1,8 +1,10 @@
 export default `
   type Post implements Message {
-    key: String
-    sequence: Int
+    content: String
+    key: String!
+    sequence: Int!
     text: String
-    timestamp: Float
+    timestamp: Float!
+    type: String!
   }
 `

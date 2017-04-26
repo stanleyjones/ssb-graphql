@@ -7,11 +7,13 @@ export default (_, { id }) => new Promise((resolve, reject) => {
     if (err) { reject(err); }
     if (!ref.isFeedId(id)) { reject(new Error(`${id} is not a valid feed ID`)); }
     pull(
-      sbot.createUserStream({ id }),
+      sbot.links({ source: id, dest: id, rel: 'about', values: true }),
       pull.collect((err, msgs) => {
         if (err) { reject(err); }
+        const profile = Object.keys(msgs)
+          .reduce((profile, key) => ({ ...profile, ...msgs[key].value.content }), {});
+        resolve({ id, ...profile });
         sbot.close();
-        resolve(msgs);
       }),
     );
   });

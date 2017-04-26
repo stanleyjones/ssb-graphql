@@ -1,6 +1,7 @@
-import { userStream, whoami } from '../queries';
+import { history, profile, whoami } from '../queries';
 
-export default () => ({
-  userStream,
+export default {
+  history,
+  profile,
   whoami,
-})
+}

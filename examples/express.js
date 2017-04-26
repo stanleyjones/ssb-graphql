@@ -7,6 +7,6 @@ import schema from '../src';
 
 const app = express();
 app.use(text({ type: 'application/graphql' }));
-app.use('/ql', graphql({ schema, pretty: true }));
+app.use('/graphql', graphql({ schema, pretty: true }));
 
 app.listen(3000);

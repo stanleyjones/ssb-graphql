@@ -5,8 +5,8 @@ export default () => new Promise((resolve, reject) => {
     if (err) { reject(err); }
     sbot.whoami((err, info) => {
       if (err) { reject(err); }
-      sbot.close();
       resolve(info.id);
+      sbot.close();
     });
   });
 });
