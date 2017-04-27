@@ -1,9 +1,9 @@
 export default `
-  type About implements Message {
+  type PostMessage implements Message {
     content: String
     key: String!
-    name: String
     sequence: Int!
+    text: String
     timestamp: Float!
     type: String!
   }

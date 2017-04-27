@@ -1,9 +1,10 @@
 export default `
-  type Post implements Message {
+  type ContactMessage implements Message {
+    contact: String!
     content: String
+    following: Boolean!
     key: String!
     sequence: Int!
-    text: String
     timestamp: Float!
     type: String!
   }

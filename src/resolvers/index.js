@@ -1,15 +1,19 @@
-import About from './About';
+import AboutMessage from './AboutMessage';
+import ChannelMessage from './ChannelMessage';
+import ContactMessage from './ContactMessage';
 import DefaultMessage from './DefaultMessage';
 import Message from './Message';
-import Post from './Post';
+import PostMessage from './PostMessage';
 import Query from './Query';
 import User from './User';
 
 export default {
-  About,
+  AboutMessage,
+  ChannelMessage,
+  ContactMessage,
   DefaultMessage,
   Message,
-  Post,
+  PostMessage,
   Query,
   User,
 }
