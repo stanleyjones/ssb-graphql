@@ -1,7 +1,7 @@
 {
-  "name": "ssb-graphql",
+  "name": "sbot-graphql",
   "version": "0.0.0",
-  "description": "GraphQL schema for SecureScuttlebutt",
+  "description": "GraphQL server for Scuttlebot",
   "main": "dist/index.js",
   "private": true,
   "scripts": {
