@@ -1,4 +1,4 @@
-import DefaultMessage from './DefaultMessage';
+import DefaultMessage from '../default/resolver';
 
 export default {
   ...DefaultMessage,

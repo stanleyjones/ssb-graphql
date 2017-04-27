@@ -1,11 +1,14 @@
 import 'babel-polyfill';
 import express from 'express';
 import graphql from 'express-graphql';
-import { text } from 'body-parser';
 import ssbClient from 'ssb-party';
+import { makeExecutableSchema } from 'graphql-tools';
+import { text } from 'body-parser';
 
-import schema from './schema';
+import resolvers from './resolvers';
+import typeDefs from './typeDefs';
 
+const schema = makeExecutableSchema({ resolvers, typeDefs });
 const app = express();
 
 ssbClient({ party: { out: false } }, (err, sbot) => {

@@ -1,9 +1,0 @@
-export default `
-  type DefaultMessage implements Message {
-    content: String
-    key: String!
-    sequence: Int!
-    timestamp: Float!
-    type: String!
-  }
-`
