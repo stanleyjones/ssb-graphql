@@ -5,8 +5,13 @@ export const getId = (sbot) => new Promise((resolve, reject) => {
 });
 
 export const getProfile = async ({ id }, sbot) => {
-  const msgs = await getLinks({ source: id, dest: id, rel: 'about' }, sbot);
-  const profile = Object.keys(msgs)
-    .reduce((profile, key) => ({ ...profile, ...msgs[key].value.content }), {});
-  return { id, ...profile };
+  try {
+    const msgs = await getLinks({ source: id, dest: id, rel: 'about' }, sbot);
+    const profile = Object.keys(msgs)
+      .map((key) => msgs[key])
+      .reduce((profile, msg) => ({ ...profile, ...msg.value.content }), {});
+    return { id, ...profile };
+  } catch (err) {
+    return { id, name: id };
+  }
 };

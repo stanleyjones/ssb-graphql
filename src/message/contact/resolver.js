@@ -3,6 +3,6 @@ import DefaultMessage from '../default/resolver';
 
 export default {
   ...DefaultMessage,
-  contact: (msg, { sbot }) => 'foo',//getProfile({ id: msg.value.content.contact }, sbot),
+  contact: (msg, { sbot }) => getProfile({ id: msg.value.content.contact }, sbot),
   following: (msg) => msg.value.content.following,
 }
