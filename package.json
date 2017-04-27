@@ -5,11 +5,15 @@
   "main": "dist/index.js",
   "private": true,
   "scripts": {
-    "build": "babel src -d dist --presets es2015,stage-2",
-    "example:express": "nodemon examples/express --exec babel-node",
+    "preserve": "babel src -d dist --presets es2015,stage-2",
+    "start": "nodemon src --exec babel-node",
+    "serve": "node dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.15.2",
+    "express-graphql": "^0.6.4",
     "graphql": "^0.9.3",
     "graphql-tools": "^0.11.0",
     "pull-stream": "^3.5.0",
@@ -22,9 +26,6 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-2": "^6.5.0",
-    "body-parser": "^1.15.1",
-    "express": "^4.15.2",
-    "express-graphql": "^0.6.4",
     "nodemon": "^1.11.0"
   },
   "babel": {
