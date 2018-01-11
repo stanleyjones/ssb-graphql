@@ -3,10 +3,8 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import ssbClient from 'ssb-party';
 import { makeExecutableSchema } from 'graphql-tools';
-import { text } from 'body-parser';
 
-import resolvers from './resolvers';
-import typeDefs from './typeDefs';
+import { resolvers, typeDefs } from './schema';
 
 const schema = makeExecutableSchema({ resolvers, typeDefs });
 const app = express();
