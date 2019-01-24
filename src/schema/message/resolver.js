@@ -1,4 +1,4 @@
-import DefaultMessage from './default/resolver';
+const DefaultMessage = require('./default/resolver');
 
 const typeMap = {
   about: 'AboutMessage',
@@ -7,7 +7,7 @@ const typeMap = {
   post: 'PostMessage',
 };
 
-export default {
+module.exports = {
   __resolveType: (obj) => typeMap[obj.value.content.type] || 'DefaultMessage',
   ...DefaultMessage,
 }

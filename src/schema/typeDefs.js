@@ -1,12 +1,18 @@
-import AboutMessage from './message/about/type.graphql';
-import Channel from './channel/type.graphql';
-import ChannelMessage from './message/channel/type.graphql';
-import ContactMessage from './message/contact/type.graphql';
-import DefaultMessage from './message/default/type.graphql';
-import Message from './message/type.graphql';
-import PostMessage from './message/post/type.graphql';
-import Query from './query/type.graphql';
-import User from './user/type.graphql';
+// const { importSchema } = require('graphql-import');
+
+// const Message = importSchema('src/schema/message/type.graphql');
+// const AboutMessage = importSchema('src/schema/message/about/type.graphql');
+const { typeDef: DefaultMessage } = require('./message/default');
+// const Channel = importSchema('src/schema/channel/type.graphql');
+// const ChannelMessage = importSchema('src/schema/message/channel/type.graphql');
+// const ContactMessage = importSchema('src/schema/message/contact/type.graphql');
+// const PostMessage = importSchema('src/schema/message/post/type.graphql');
+// const User = importSchema('src/schema/user/type.graphql');
+
+const { typeDef: Channel } = require('./channel');
+const { typeDef: Query } = require('./query');
+const { typeDef: User } = require('./user');
+const { typeDef: Message } = require('./message');
 
 const Schema = `
   schema {
@@ -14,15 +20,15 @@ const Schema = `
   }
 `;
 
-export default [
-  AboutMessage,
+module.exports = [
+  // AboutMessage,
   Channel,
-  ChannelMessage,
-  ContactMessage,
+  // ChannelMessage,
+  // ContactMessage,
   DefaultMessage,
   Message,
-  PostMessage,
+  // PostMessage,
   Query,
   Schema,
   User,
-]
+];

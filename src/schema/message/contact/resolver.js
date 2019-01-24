@@ -1,7 +1,7 @@
-import { getProfile } from '../../user/helpers';
-import DefaultMessage from '../default/resolver';
+const { getProfile } = require('../../user/helpers');
+const DefaultMessage = require('../default/resolver');
 
-export default {
+module.exports = {
   ...DefaultMessage,
   contact: (msg, { sbot }) => getProfile({ id: msg.value.content.contact }, sbot),
   following: (msg) => msg.value.content.following,

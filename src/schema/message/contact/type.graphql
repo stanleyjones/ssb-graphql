@@ -1,3 +1,6 @@
+# import Message from '../type.graphql'
+# import User from '../../user/type.graphql'
+
 type ContactMessage implements Message {
   contact: User!
   content: String

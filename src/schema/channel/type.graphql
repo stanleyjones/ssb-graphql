@@ -1,5 +1,0 @@
-type Channel {
-  name: String!
-  subscribed: Boolean
-  foo: String
-}
