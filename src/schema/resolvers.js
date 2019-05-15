@@ -2,7 +2,7 @@
 // const Channel = require('./channel/resolver');
 // const ChannelMessage = require('./message/channel/resolver');
 // const ContactMessage = require('./message/contact/resolver');
-const { resolver: DefaultMessage } = require('./message/default');
+const { resolvers: DefaultMessage } = require('./message/default');
 // const Message = require('./message/resolver');
 // const PostMessage = require('./message/post/resolver');
 const { resolvers: Message } = require('./message');
